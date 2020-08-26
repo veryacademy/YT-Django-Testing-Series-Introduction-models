@@ -1,0 +1,7 @@
+// index.html
+{% for post in posts %}
+<ul>
+    <li><a href="{{post.get_absolute_url}}">{{ post.title }}</a>
+    </li>
+</ul>
+{% endfor %}

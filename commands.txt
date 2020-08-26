@@ -1,0 +1,49 @@
+####
+pip install coverage
+####
+
+coverage --version
+coverage help
+
+####
+Run test
+####
+
+coverage run manage.py test app1
+
+####
+See Results
+####
+
+coverage report
+coverage html
+
+####
+Omit venv from test results
+####
+
+coverage run --omit='*/venv/*' manage.py test
+
+####
+Add a new user to the User Table
+####
+
+self.user = User.objects.create_user(username='testuser', password='12345')
+login = self.client.login(username='testuser', password='12345')
+
+
+####
+Running Tests
+####
+
+# Run the specified module
+py manage.py test app1
+
+# Run the specified module
+py manage.py test app1.tests
+
+# Run the specified class
+py manage.py test app1.tests.models
+
+# Run the specified method
+py manage.py test app1.tests.models.TestNew
